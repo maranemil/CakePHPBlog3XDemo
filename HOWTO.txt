@@ -1,0 +1,36 @@
+https://book.cakephp.org/3.0/en/tutorials-and-examples/blog/blog.html
+https://book.cakephp.org/3.0/en/tutorials-and-examples/blog/part-two.html
+
+https://book.cakephp.org/3.0/en/bake/usage.html
+https://book.cakephp.org/3.0/en/views.html#view-elements
+https://book.cakephp.org/3.0/en/views.html#view-layouts
+
+
+
+########################################################################
+#
+#   Getting CakePHP 3.x
+#   https://book.cakephp.org/3.0/en/installation.html
+#   https://book.cakephp.org/3.0/en/tutorials-and-examples/blog/part-two.html
+#   https://book.cakephp.org/3.0/en/tutorials-and-examples/blog-auth-example/auth.html
+#
+########################################################################
+
+sudo apt install composer
+composer create-project --prefer-dist cakephp/app cakephpblog3x
+composer self-update && composer create-project --prefer-dist cakephp/app cakephpblog3x
+chmod +x bin/cake
+
+
+composer create-project --prefer-dist cakephp/app bookmarker
+create-project --prefer-dist cakephp/app blog
+sudo chown -R www-data tmp && sudo chown -R www-data logs
+sudo chmod 777 -R tmp && sudo chmod 777 -R logs
+
+
+sudo apt install php7.2-intl
+sudo service apache2 restart
+
+
+bin/cake bake model Articles
+bin/cake bake controller Articles
