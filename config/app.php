@@ -48,7 +48,7 @@ return [
         'dir' => 'src',
         'webroot' => 'webroot',
         'wwwRoot' => WWW_ROOT,
-        //'baseUrl' => env('SCRIPT_NAME'),
+        'baseUrl' => env('SCRIPT_NAME'),
         'fullBaseUrl' => false,
         'imageBaseUrl' => 'img/',
         'cssBaseUrl' => 'css/',
@@ -254,8 +254,8 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => 'lime',
-            'password' => 'lime',
+            'username' => 'blabla',
+            'password' => 'blabla',
             'database' => 'cakeblogdemo3x',
             /*
              * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).
