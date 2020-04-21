@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -20,64 +21,62 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class ArticlesTable extends Table
-{
+class ArticlesTable extends Table {
 
-    /**
-     * Initialize method
-     *
-     * @param array $config The configuration for the Table.
-     * @return void
-     */
-    public function initialize(array $config)
-    {
-        parent::initialize($config);
+	/**
+	 * Initialize method
+	 *
+	 * @param array $config The configuration for the Table.
+	 *
+	 * @return void
+	 */
+	public function initialize(array $config) {
+		parent::initialize($config);
 
-        $this->setTable('articles');
-        $this->setDisplayField('title');
-        $this->setPrimaryKey('id');
+		$this->setTable('articles');
+		$this->setDisplayField('title');
+		$this->setPrimaryKey('id');
 
-        $this->addBehavior('Timestamp');
-    }
+		$this->addBehavior('Timestamp');
+	}
 
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->integer('id')
-            ->allowEmpty('id', 'create');
+	/**
+	 * Default validation rules.
+	 *
+	 * @param \Cake\Validation\Validator $validator Validator instance.
+	 *
+	 * @return \Cake\Validation\Validator
+	 */
+	public function validationDefault(Validator $validator) {
+		$validator
+			->integer('id')
+			->allowEmpty('id', 'create');
 
-        $validator
-            ->scalar('title')
-            ->maxLength('title', 50)
-            ->allowEmpty('title');
+		$validator
+			->scalar('title')
+			->maxLength('title', 50)
+			->allowEmpty('title');
 
-        $validator
-            ->scalar('body')
-            ->allowEmpty('body');
+		$validator
+			->scalar('body')
+			->allowEmpty('body');
 
-        return $validator;
-    }
+		return $validator;
+	}
 
 
-    public function isOwnedBy($articleId, $userId)
-    {
-        return $this->exists(['id' => $articleId, 'user_id' => $userId]);
-    }
+	public function isOwnedBy($articleId, $userId) {
+		return $this->exists(['id' => $articleId, 'user_id' => $userId]);
+	}
 
-    /* public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->notEmpty('title')
-            ->requirePresence('title')
-            ->notEmpty('body')
-            ->requirePresence('body');
+	/* public function validationDefault(Validator $validator)
+	{
+		$validator
+			->notEmpty('title')
+			->requirePresence('title')
+			->notEmpty('body')
+			->requirePresence('body');
 
-        return $validator;
-    } */
+		return $validator;
+	} */
 }

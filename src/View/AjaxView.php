@@ -12,6 +12,7 @@
  * @since         3.0.4
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\View;
 
 use Cake\Event\EventManager;
@@ -23,27 +24,25 @@ use Cake\Http\ServerRequest;
  * Currently only switches the default layout and sets the response type -
  * which just maps to text/html by default.
  */
-class AjaxView extends AppView
-{
+class AjaxView extends AppView {
 
-    /**
-     * The name of the layout file to render the view inside of. The name
-     * specified is the filename of the layout in /src/Template/Layout without
-     * the .ctp extension.
-     *
-     * @var string
-     */
-    public $layout = 'ajax';
+	/**
+	 * The name of the layout file to render the view inside of. The name
+	 * specified is the filename of the layout in /src/Template/Layout without
+	 * the .ctp extension.
+	 *
+	 * @var string
+	 */
+	public $layout = 'ajax';
 
-    /**
-     * Initialization hook method.
-     *
-     * @return void
-     */
-    public function initialize()
-    {
-        parent::initialize();
+	/**
+	 * Initialization hook method.
+	 *
+	 * @return void
+	 */
+	public function initialize() {
+		parent::initialize();
 
-        $this->response = $this->response->withType('ajax');
-    }
+		$this->response = $this->response->withType('ajax');
+	}
 }
