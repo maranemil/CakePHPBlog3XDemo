@@ -2,10 +2,8 @@
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
- *
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.0
@@ -16,7 +14,7 @@
  * Use the DS to separate the directories in other defines
  */
 if (!defined('DS')) {
-    define('DS', DIRECTORY_SEPARATOR);
+   define('DS', DIRECTORY_SEPARATOR);
 }
 
 /**
@@ -73,7 +71,6 @@ define('CACHE', TMP . 'cache' . DS);
 
 /**
  * The absolute path to the "cake" directory, WITHOUT a trailing DS.
- *
  * CakePHP should always be installed with composer, so look there.
  */
 define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'vendor' . DS . 'cakephp' . DS . 'cakephp');
