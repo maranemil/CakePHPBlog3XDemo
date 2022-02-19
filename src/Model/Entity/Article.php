@@ -1,4 +1,7 @@
-<?php
+<?php /** @noinspection PhpUnused */
+/** @noinspection PhpUndefinedClassInspection */
+
+/** @noinspection PhpUndefinedNamespaceInspection */
 
 namespace App\Model\Entity;
 
@@ -12,6 +15,7 @@ use Cake\ORM\Entity;
  * @property string                $body
  * @property FrozenTime $created
  * @property FrozenTime $modified
+ * @property $user_id
  */
 class Article extends Entity {
 

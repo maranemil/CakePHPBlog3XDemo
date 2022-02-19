@@ -1,4 +1,8 @@
-<?php
+<?php /** @noinspection PhpMethodParametersCountMismatchInspection */
+/** @noinspection PhpUnused */
+/** @noinspection PhpUndefinedClassInspection */
+/** @noinspection PhpUndefinedNamespaceInspection */
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -14,53 +18,61 @@
 namespace App\Controller;
 
 use Cake\Event\Event;
+use Cake\Http\Response;
+use Exception;
 
 /**
  * Error Handling Controller
  * Controller used by ExceptionRenderer to render error responses.
+ * @method viewBuilder()
  */
-class ErrorController extends AppController {
-   /**
-	* Initialization hook method.
-	* @return void
-	* @throws \Exception
-	*/
-   public function initialize() {
-	  $this->loadComponent('RequestHandler', [
-		  'enableBeforeRedirect' => false,
-	  ]);
-   }
+class ErrorController extends AppController
+{
+    /**
+     * Initialization hook method.
+     * @return void
+     * @throws Exception
+     */
+    public function initialize()
+    {
+        $this->loadComponent('RequestHandler', [
+            'enableBeforeRedirect' => false,
+        ]);
+    }
 
-   /**
-	* beforeFilter callback.
-	*
-	* @param \Cake\Event\Event $event Event.
-	*
-	* @return \Cake\Http\Response|null|void
-	*/
-   public function beforeFilter(Event $event) {
-   }
+    /**
+     * beforeFilter callback.
+     *
+     * @param Event $event Event.
+     *
+     * @return void
+     */
+    public function beforeFilter(Event $event)
+    {
+    }
 
-   /**
-	* beforeRender callback.
-	*
-	* @param \Cake\Event\Event $event Event.
-	*
-	* @return \Cake\Http\Response|null|void
-	*/
-   public function beforeRender(Event $event) {
-	  parent::beforeRender($event);
+    /**
+     * beforeRender callback.
+     *
+     * @param Event $event Event.
+     *
+     * @return void
+     */
+    public function beforeRender(Event $event)
+    {
+        parent::beforeRender($event);
 
-	  $this->viewBuilder()->setTemplatePath('Error');
-   }
+        $this->viewBuilder()->setTemplatePath('Error');
+    }
 
-   /**
-	* afterFilter callback.
-	*
-	* @param \Cake\Event\Event $event Event.
-	*
-	* @return \Cake\Http\Response|null|void
-	*/
-   public function afterFilter(Event $event) {
-   }
+    /**
+     * afterFilter callback.
+     *
+     * @param Event $event Event.
+     *
+     * @return void
+     */
+    public function afterFilter(Event $event)
+    {
+    }
 }

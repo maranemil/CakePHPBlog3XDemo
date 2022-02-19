@@ -1,4 +1,6 @@
-<?php
+<?php /** @noinspection PhpUndefinedNamespaceInspection */
+
+/** @noinspection PhpUndefinedClassInspection */
 
 namespace App\Model\Table;
 
@@ -20,7 +22,9 @@ use Cake\Validation\Validator;
  * @method Article patchEntity(EntityInterface $entity, array $data, array $options = [])
  * @method Article[] patchEntities($entities, array $data, array $options = [])
  * @method Article findOrCreate($search, callable $callback = null, $options = [])
+ * @method delete(Article $article)
  * @mixin TimestampBehavior
+ * @property $Categories
  */
 class ArticlesTable extends Table {
 
